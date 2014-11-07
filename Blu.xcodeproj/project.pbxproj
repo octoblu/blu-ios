@@ -41,7 +41,7 @@
 		34625195D26244B648262034 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		46F6C3A0B7C1E2397CCCA68E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9820F4C6BD91C6E75410EC69 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D02B653C1A0D465E000AF70B /* Blu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D02B653C1A0D465E000AF70B /* blu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D02B65401A0D465E000AF70B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D02B65411A0D465E000AF70B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D02B65461A0D465E000AF70B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 		D02B653D1A0D465E000AF70B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D02B653C1A0D465E000AF70B /* Blu.app */,
+				D02B653C1A0D465E000AF70B /* blu.app */,
 				D02B65511A0D465E000AF70B /* BluTests.xctest */,
 			);
 			name = Products;
@@ -198,7 +198,7 @@
 			);
 			name = Blu;
 			productName = Blu;
-			productReference = D02B653C1A0D465E000AF70B /* Blu.app */;
+			productReference = D02B653C1A0D465E000AF70B /* blu.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D02B65501A0D465E000AF70B /* BluTests */ = {
@@ -230,6 +230,7 @@
 				TargetAttributes = {
 					D02B653B1A0D465E000AF70B = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = JLSZ8Q5945;
 					};
 					D02B65501A0D465E000AF70B = {
 						CreatedOnToolsVersion = 6.1;
@@ -469,9 +470,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				CODE_SIGN_IDENTITY = "iPhone Developer: DANIEL GARLICK (4Z2236VTBD)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: DANIEL GARLICK (4Z2236VTBD)";
 				INFOPLIST_FILE = Blu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = blu;
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Blu/Blu-Bridging-Header.h";
 			};
 			name = Debug;
@@ -482,9 +486,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Octoblu Inc. (JLSZ8Q5945)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Octoblu Inc. (JLSZ8Q5945)";
 				INFOPLIST_FILE = Blu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = blu;
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Blu/Blu-Bridging-Header.h";
 			};
 			name = Release;
