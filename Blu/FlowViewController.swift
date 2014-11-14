@@ -15,6 +15,8 @@ class FlowViewController: UIViewController, UITableViewDelegate, UITableViewData
   var uuid : String? = nil
   var token : String? = nil
   
+  var displayEmptyNotice : Bool = false;
+  
   var refreshControl:UIRefreshControl!
   
   // http://www.tinygorilla.com/Easter_eggs/pallatehex.html
@@ -111,26 +113,55 @@ class FlowViewController: UIViewController, UITableViewDelegate, UITableViewData
   }
 
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return self.flows.count;
+    var count = self.flows.count
+    if self.displayEmptyNotice {
+      count = 1
+    }
+    return count;
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
-
-    cell.textLabel.text = self.flows[indexPath.item].triggerName
+    
+    if self.displayEmptyNotice {
+      cell.textLabel.text = "No Triggers Available"
+    }else{
+      cell.textLabel.text = self.flows[indexPath.item].triggerName
+    }
+    
     cell.textLabel.textColor = UIColor.whiteColor()
     cell.textLabel.font = UIFont(name: "Helvetica", size: CGFloat(20.0))
-    
     cell.selectionStyle = UITableViewCellSelectionStyle.None
     
     return cell
   }
-
+  
   func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-    self.flows[indexPath.item].trigger(self.uuid!, token: self.token!)
+    if self.displayEmptyNotice {
+      var alert = UIAlertController(title: "No Triggers", message: "You have no triggers, please create them in the Octoblu designer.", preferredStyle: UIAlertControllerStyle.Alert)
+      alert.addAction(UIAlertAction(title: "Go To Octoblu", style: UIAlertActionStyle.Default, handler: { action in
+        switch action.style{
+        case .Default:
+          let url = NSURL(string:"https://app.octoblu.com")!
+          UIApplication.sharedApplication().openURL(url)
+        case .Cancel:
+          NSLog("Alert Canceled")
+        case .Destructive:
+          NSLog("Alert Desctructed")
+        }
+      }))
+      alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+      self.presentViewController(alert, animated: true, completion: nil)
+    }else{
+      self.flows[indexPath.item].trigger(self.uuid!, token: self.token!)
+    }
   }
   
   func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+    if self.displayEmptyNotice {
+      cell.backgroundColor = UIColor.darkGrayColor()
+      return
+    }
     let index = indexPath.item
     // If color already set then don't set it to different one
     if colorIndexHash[index]? != nil {
@@ -149,6 +180,7 @@ class FlowViewController: UIViewController, UITableViewDelegate, UITableViewData
   func getFlows(uuid : String, token : String){
     let onSuccess = { (triggers : [Trigger]) -> Void in
       self.flows = triggers
+      self.displayEmptyNotice = self.flows.count == 0
       self.tableView.reloadData()
       self.refreshControl.endRefreshing()
     }
