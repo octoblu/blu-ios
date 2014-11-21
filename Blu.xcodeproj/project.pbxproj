@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C21A79467D6B5EC05BF7CBAB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9820F4C6BD91C6E75410EC69 /* libPods.a */; };
+		D01619081A1FB45500A19EC7 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01619071A1FB45500A19EC7 /* Timer.swift */; };
 		D02B65421A0D465E000AF70B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B65411A0D465E000AF70B /* AppDelegate.swift */; };
 		D02B65471A0D465E000AF70B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02B65451A0D465E000AF70B /* Main.storyboard */; };
 		D02B65491A0D465E000AF70B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D02B65481A0D465E000AF70B /* Images.xcassets */; };
@@ -41,6 +42,7 @@
 		34625195D26244B648262034 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		46F6C3A0B7C1E2397CCCA68E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		9820F4C6BD91C6E75410EC69 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D01619071A1FB45500A19EC7 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		D02B653C1A0D465E000AF70B /* blu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D02B65401A0D465E000AF70B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D02B65411A0D465E000AF70B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				D0D447DA1A0D4FCE00F0372E /* LoginViewController.swift */,
 				D02B65451A0D465E000AF70B /* Main.storyboard */,
 				D02B65481A0D465E000AF70B /* Images.xcassets */,
+				D01619071A1FB45500A19EC7 /* Timer.swift */,
 				D02B654A1A0D465E000AF70B /* LaunchScreen.xib */,
 				D02B653F1A0D465E000AF70B /* Supporting Files */,
 			);
@@ -326,6 +329,7 @@
 				D02B65421A0D465E000AF70B /* AppDelegate.swift in Sources */,
 				D0D447D71A0D4C1000F0372E /* Trigger.swift in Sources */,
 				D0D447D61A0D4C1000F0372E /* RoundRectButton.swift in Sources */,
+				D01619081A1FB45500A19EC7 /* Timer.swift in Sources */,
 				D0D447D01A0D4C1000F0372E /* FlowViewController.swift in Sources */,
 				D0D447D91A0D4D0F00F0372E /* json.swift in Sources */,
 			);

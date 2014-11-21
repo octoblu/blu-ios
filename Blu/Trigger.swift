@@ -19,8 +19,8 @@ class Trigger {
         self.triggerName = triggerName
     }
     
-    func trigger(uuid : String, token : String){
+   func trigger(uuid : String, token : String, onResponse : ()->()){
         let meshblu = Meshblu(uuid: uuid, token: token)
-        meshblu.makeRequest("/messages", parameters: ["devices": self.flowId, "topic": "button", "payload" : ["from": self.id]])
+        meshblu.makeRequest("/messages", parameters: ["devices": self.flowId, "topic": "button", "payload" : ["from": self.id]], onResponse)
     }
 }

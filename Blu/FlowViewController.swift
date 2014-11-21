@@ -123,6 +123,8 @@ class FlowViewController: UIViewController, UITableViewDelegate, UITableViewData
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
     
+    cell.textLabel.textAlignment = NSTextAlignment.Center
+    
     if self.displayEmptyNotice {
       cell.textLabel.text = "No Triggers Available"
     }else{
@@ -130,7 +132,7 @@ class FlowViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     cell.textLabel.textColor = UIColor.whiteColor()
-    cell.textLabel.font = UIFont(name: "Helvetica", size: CGFloat(20.0))
+    cell.textLabel.font = UIFont(name: "Helvetica-Bold", size: CGFloat(22.0))
     cell.selectionStyle = UITableViewCellSelectionStyle.None
     
     return cell
@@ -153,7 +155,24 @@ class FlowViewController: UIViewController, UITableViewDelegate, UITableViewData
       alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
       self.presentViewController(alert, animated: true, completion: nil)
     }else{
-      self.flows[indexPath.item].trigger(self.uuid!, token: self.token!)
+      
+//      UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+//      spinner.frame = CGRectMake(0, 0, 24, 24);
+//      UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//      cell.accessoryView = spinner;
+//      [spinner startAnimating];
+//      [spinner release];
+      var cell : UITableViewCell = self.tableView.cellForRowAtIndexPath(indexPath)!
+      cell.textLabel.text = "Firing...";
+      
+      self.flows[indexPath.item].trigger(self.uuid!, token: self.token!, {
+        cell.textLabel.text = "Triggered!"
+        Timer.start(1, repeats: false, handler: {
+          (t: NSTimer) in
+          self.tableView.reloadData()
+          t.invalidate()
+        })
+      })
     }
   }
   

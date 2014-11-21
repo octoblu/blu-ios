@@ -20,7 +20,15 @@ class Octoblu {
         self.uuid = uuid
         self.token = token
     }
-    
+  
+    func afterResult(){
+      NSTimer.scheduledTimerWithTimeInterval(0.5, target: self, selector: "dismissHUD:", userInfo: nil, repeats: false)
+    }
+  
+    @objc func dismissHUD(timer: NSTimer){
+      SVProgressHUD.dismiss()
+    }
+  
     private func makeRequest(path : String, method : String, parameters : Dictionary<String, String>, onSuccess : (json : JSON) -> ()){
         SVProgressHUD.showWithStatus("Loading flows...")
 
@@ -30,13 +38,15 @@ class Octoblu {
         let requestSuccess = {
             (operation :AFHTTPRequestOperation!, responseObject :AnyObject!) -> Void in
             let json = JSON(responseObject);
-            SVProgressHUD.dismiss()
+            SVProgressHUD.showSuccessWithStatus("Flows Loaded")
+            self.afterResult()
             onSuccess(json: json)
         }
         // Request Failure
         let requestFailure = {
             (operation :AFHTTPRequestOperation!, error :NSError!) -> Void in
-            SVProgressHUD.dismiss()
+            SVProgressHUD.showErrorWithStatus("Unable to load flows");
+            self.afterResult()
             NSLog("requestFailure: \(error)")
         }
         // Set Headers

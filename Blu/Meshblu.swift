@@ -14,35 +14,37 @@ class Meshblu {
     
     var uuid : String
     var token : String
-    
+  
     // Constructor
     init(uuid : String, token : String){
         self.uuid = uuid
         self.token = token
     }
-    
-    func dismissHUD(){
-        SVProgressHUD.dismiss()
-    }
-    
-    func makeRequest(path : String, parameters : AnyObject){
+  
+  func makeRequest(path : String, parameters : AnyObject, onResponse: () -> ()){
         let manager :AFHTTPRequestOperationManager = AFHTTPRequestOperationManager()
         let url :String = self.meshbluUrl + path
         
         // Request Success
         let requestSuccess = {
-            (operation :AFHTTPRequestOperation!, responseObject :AnyObject!) -> Void in
-            self.dismissHUD()
-            NSLog("requestSuccess \(responseObject)")
+          (operation :AFHTTPRequestOperation!, responseObject :AnyObject!) -> Void in
+          
+          //SVProgressHUD.showSuccessWithStatus("Sent!")
+          onResponse();
+          NSLog("requestSuccess \(responseObject)")
         }
         
         // Request Failure
         let requestFailure = {
             (operation :AFHTTPRequestOperation!, error :NSError!) -> Void in
-            self.dismissHUD()
-            NSLog("requestFailure: \(error)")
+          
+            //SVProgressHUD.showErrorWithStatus("Error!")
+          onResponse();
+          NSLog("requestFailure: \(error)")
         }
-        SVProgressHUD.showWithStatus("Triggering...")
+      
+
+        //SVProgressHUD.showWithStatus("Triggering...")
         // Set Headers
         manager.requestSerializer.setValue(self.uuid, forHTTPHeaderField: "skynet_auth_uuid")
         manager.requestSerializer.setValue(self.token, forHTTPHeaderField: "skynet_auth_token")
