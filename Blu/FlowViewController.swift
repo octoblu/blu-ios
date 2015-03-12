@@ -123,16 +123,16 @@ class FlowViewController: UIViewController, UITableViewDelegate, UITableViewData
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
     
-    cell.textLabel.textAlignment = NSTextAlignment.Center
+    cell.textLabel!.textAlignment = NSTextAlignment.Center
     
     if self.displayEmptyNotice {
-      cell.textLabel.text = "No Triggers Available"
+      cell.textLabel!.text = "No Triggers Available"
     }else{
-      cell.textLabel.text = self.flows[indexPath.item].triggerName
+      cell.textLabel!.text = self.flows[indexPath.item].triggerName
     }
     
-    cell.textLabel.textColor = UIColor.whiteColor()
-    cell.textLabel.font = UIFont(name: "Helvetica-Bold", size: CGFloat(22.0))
+    cell.textLabel!.textColor = UIColor.whiteColor()
+    cell.textLabel!.font = UIFont(name: "Helvetica-Bold", size: CGFloat(22.0))
     cell.selectionStyle = UITableViewCellSelectionStyle.None
     
     return cell
@@ -163,10 +163,10 @@ class FlowViewController: UIViewController, UITableViewDelegate, UITableViewData
 //      [spinner startAnimating];
 //      [spinner release];
       var cell : UITableViewCell = self.tableView.cellForRowAtIndexPath(indexPath)!
-      cell.textLabel.text = "Firing...";
+      cell.textLabel!.text = "Firing...";
       
       self.flows[indexPath.item].trigger(self.uuid!, token: self.token!, {
-        cell.textLabel.text = "Triggered!"
+        cell.textLabel!.text = "Triggered!"
         Timer.start(1, repeats: false, handler: {
           (t: NSTimer) in
           self.tableView.reloadData()
