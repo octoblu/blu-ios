@@ -165,14 +165,16 @@ class FlowViewController: UIViewController, UITableViewDelegate, UITableViewData
       var cell : UITableViewCell = self.tableView.cellForRowAtIndexPath(indexPath)!
       cell.textLabel!.text = "Firing...";
       
-      self.flows[indexPath.item].trigger(self.uuid!, token: self.token!, {
+      let onSuccess = {(json : JSON) -> Void in
         cell.textLabel!.text = "Triggered!"
         Timer.start(1, repeats: false, handler: {
           (t: NSTimer) in
           self.tableView.reloadData()
           t.invalidate()
         })
-      })
+      };
+      
+      self.flows[indexPath.item].trigger(self.uuid!, token: self.token!, onSuccess);
     }
   }
   

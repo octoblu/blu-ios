@@ -10,7 +10,7 @@ import Foundation
 
 class Octoblu {
     
-    let octobluUrl : String = "https://app.octoblu.com"
+    let octobluUrl : String = "https://triggers.octoblu.com"
     
     var uuid : String
     var token : String
@@ -29,29 +29,26 @@ class Octoblu {
       SVProgressHUD.dismiss()
     }
   
-    private func makeRequest(path : String, method : String, parameters : Dictionary<String, String>, onSuccess : (json : JSON) -> ()){
-        SVProgressHUD.showWithStatus("Loading flows...")
+    func makeRequest(url : String, method : String, parameters : Dictionary<String, String>, onSuccess : (json : JSON) -> ()){
 
         let manager :AFHTTPRequestOperationManager = AFHTTPRequestOperationManager()
-        let url :String = self.octobluUrl + path
         // Request Success
         let requestSuccess = {
             (operation :AFHTTPRequestOperation!, responseObject :AnyObject!) -> Void in
             let json = JSON(responseObject);
-            SVProgressHUD.showSuccessWithStatus("Flows Loaded")
             self.afterResult()
             onSuccess(json: json)
         }
         // Request Failure
         let requestFailure = {
             (operation :AFHTTPRequestOperation!, error :NSError!) -> Void in
-            SVProgressHUD.showErrorWithStatus("Unable to load flows");
+            SVProgressHUD.showErrorWithStatus("Error!");
             self.afterResult()
             NSLog("requestFailure: \(error)")
         }
         // Set Headers
-        manager.requestSerializer.setValue(self.uuid, forHTTPHeaderField: "skynet_auth_uuid")
-        manager.requestSerializer.setValue(self.token, forHTTPHeaderField: "skynet_auth_token")
+        manager.requestSerializer.setValue(self.uuid, forHTTPHeaderField: "meshblu_auth_uuid")
+        manager.requestSerializer.setValue(self.token, forHTTPHeaderField: "meshblu_auth_token")
         
         switch method {
         case "GET":
@@ -66,22 +63,28 @@ class Octoblu {
     func getFlows(onSuccess : (triggers : [Trigger]) -> Void) -> Void {
         let processFlows = { (json : JSON) -> Void in
             var triggers : [Trigger] = []
-            for (i, flow) in json {
-                let flowId = flow["flowId"].asString
-                let flowName = flow["name"].asString
-                
-                for (j, node) in flow["nodes"] {
-                    if(node["type"].asString == "operation:trigger"){
-                        let nodeId = node["id"].asString
-                        let nodeName = node["name"].asString
-                        triggers += [Trigger(id: nodeId!, flowId: flowId!, flowName: flowName!, triggerName: nodeName!)]
-                    }
-                }
+            for (i, trigger) in json {
+                let flowId = trigger["flowId"].asString
+                let flowName = trigger["flowName"].asString
+                let triggerName = trigger["name"].asString
+                let triggerId = trigger["id"].asString
+                let uri = trigger["uri"].asString
+              
+                triggers += [Trigger(
+                  id: triggerId!,
+                  flowId: flowId!,
+                  flowName: flowName!,
+                  triggerName: triggerName!,
+                  uri: uri!
+                )]
             }
+            SVProgressHUD.showSuccessWithStatus("Triggers loaded!")
+
             onSuccess(triggers : triggers)
         }
-        
+
+        SVProgressHUD.showWithStatus("Loading triggers...")
         let parameters = Dictionary<String, String>()
-        makeRequest("/api/flows", method: "GET", parameters: parameters, onSuccess : processFlows)
+        makeRequest("\(octobluUrl)/triggers", method: "GET", parameters: parameters, onSuccess : processFlows)
     }
 }

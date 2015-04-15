@@ -11,7 +11,6 @@
 		D01619081A1FB45500A19EC7 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01619071A1FB45500A19EC7 /* Timer.swift */; };
 		D02B65421A0D465E000AF70B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B65411A0D465E000AF70B /* AppDelegate.swift */; };
 		D02B65471A0D465E000AF70B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02B65451A0D465E000AF70B /* Main.storyboard */; };
-		D02B65491A0D465E000AF70B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D02B65481A0D465E000AF70B /* Images.xcassets */; };
 		D02B654C1A0D465E000AF70B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D02B654A1A0D465E000AF70B /* LaunchScreen.xib */; };
 		D02B65581A0D465E000AF70B /* BluTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B65571A0D465E000AF70B /* BluTests.swift */; };
 		D0D447CE1A0D4C1000F0372E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0D447C11A0D4C1000F0372E /* LaunchScreen.xib */; };
@@ -228,7 +227,7 @@
 		D02B65341A0D465E000AF70B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = "Octoblu, Inc";
 				TargetAttributes = {
 					D02B653B1A0D465E000AF70B = {
@@ -271,7 +270,6 @@
 				D0D447D21A0D4C1000F0372E /* Images.xcassets in Resources */,
 				D02B65471A0D465E000AF70B /* Main.storyboard in Resources */,
 				D02B654C1A0D465E000AF70B /* LaunchScreen.xib in Resources */,
-				D02B65491A0D465E000AF70B /* Images.xcassets in Resources */,
 				D0D447D11A0D4C1000F0372E /* images-yay.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,8 +472,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
-				CODE_SIGN_IDENTITY = "iPhone Developer: DANIEL GARLICK (4Z2236VTBD)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: DANIEL GARLICK (4Z2236VTBD)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Blu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = blu;
@@ -490,8 +488,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Octoblu Inc. (JLSZ8Q5945)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Octoblu Inc. (JLSZ8Q5945)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Blu/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = blu;
