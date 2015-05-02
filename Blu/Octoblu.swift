@@ -85,6 +85,6 @@ class Octoblu {
 
         SVProgressHUD.showWithStatus("Loading triggers...")
         let parameters = Dictionary<String, String>()
-        makeRequest("\(octobluUrl)/triggers", method: "GET", parameters: parameters, onSuccess : processFlows)
+        makeRequest("\(octobluUrl)/mytriggers", method: "GET", parameters: parameters, onSuccess : processFlows)
     }
 }
