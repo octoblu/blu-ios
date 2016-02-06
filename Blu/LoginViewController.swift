@@ -11,7 +11,7 @@ import Foundation
 
 class LoginViewController : UIViewController, UIWebViewDelegate {
     @IBOutlet var webView: UIWebView!
-    let LOGIN_URL = "http://app.octoblu.com/static/auth-login.html"
+    let LOGIN_URL = "https://app.octoblu.com/static/auth-login.html"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class LoginViewController : UIViewController, UIWebViewDelegate {
     
     func clearCookies(){
         let cookieStore = NSHTTPCookieStorage.sharedHTTPCookieStorage()
-        for cookie in cookieStore.cookies as Array<NSHTTPCookie> {
+        for cookie in cookieStore.cookies! as Array<NSHTTPCookie> {
             cookieStore.deleteCookie(cookie)
         }
     }
@@ -41,11 +41,11 @@ class LoginViewController : UIViewController, UIWebViewDelegate {
         settings.setObject(uuid, forKey: "uuid")
         settings.setObject(token, forKey: "token")
         NSLog("UUID : \(uuid) TOKEN : \(token)")
-        self.dismissViewControllerAnimated(true, nil)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
-        let currentUrl : String? = webView.request?.URL.absoluteString;
+        let currentUrl : String? = webView.request?.URL!.absoluteString;
         if currentUrl == nil || currentUrl! == "" {
             return
         }
@@ -53,11 +53,11 @@ class LoginViewController : UIViewController, UIWebViewDelegate {
             return
         }
         
-        let queryItems  = NSURLComponents(string: currentUrl!)?.queryItems
+        let queryItems  = (NSURLComponents(string: currentUrl!)?.queryItems)!
             as Array<NSURLQueryItem>
         
         let keys = queryItems.map({(queryItem) -> String in queryItem.name})
-        if(!contains(keys, "uuid") || !contains(keys, "token")) {
+        if(!keys.contains("uuid") || !keys.contains("token")) {
             return
         }
         
