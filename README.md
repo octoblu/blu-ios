@@ -15,4 +15,4 @@ Trigger insanity
  ```
  pod install
  ```
-1. Build the `Blu.xcworkspace` and run the `Blu` scheme/target using Xcode IDE/CLI or [ios-deploy](https://www.npmjs.com/package/ios-deploy).
+1. Open/Build the generated `Blu.xcworkspace` and run the `Blu` scheme/target using Xcode IDE/CLI or [ios-deploy](https://www.npmjs.com/package/ios-deploy).
