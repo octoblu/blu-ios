@@ -11,7 +11,7 @@ import Foundation
 
 class LoginViewController : UIViewController, UIWebViewDelegate {
     @IBOutlet var webView: UIWebView!
-    let LOGIN_URL = "http://app.octoblu.com/static/auth-login.html"
+    let LOGIN_URL = "https://app.octoblu.com/static/auth-login.html"
     
     override func viewDidLoad() {
         super.viewDidLoad()
