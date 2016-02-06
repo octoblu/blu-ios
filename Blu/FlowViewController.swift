@@ -57,7 +57,7 @@ class FlowViewController: UIViewController, UITableViewDelegate, UITableViewData
 
   @IBOutlet var tableView: UITableView!
   
-  @IBAction func logoutButton(AnyObject){
+  @IBAction func logoutButton(_: AnyObject){
     let settings = NSUserDefaults.standardUserDefaults()
     settings.removeObjectForKey("uuid")
     settings.removeObjectForKey("token")
@@ -121,7 +121,7 @@ class FlowViewController: UIViewController, UITableViewDelegate, UITableViewData
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+    var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
     
     cell.textLabel!.textAlignment = NSTextAlignment.Center
     
@@ -174,7 +174,7 @@ class FlowViewController: UIViewController, UITableViewDelegate, UITableViewData
         })
       };
       
-      self.flows[indexPath.item].trigger(self.uuid!, token: self.token!, onSuccess);
+      self.flows[indexPath.item].trigger(self.uuid!, token: self.token!, onResponse: onSuccess);
     }
   }
   
@@ -185,7 +185,7 @@ class FlowViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     let index = indexPath.item
     // If color already set then don't set it to different one
-    if colorIndexHash[index]? != nil {
+    if colorIndexHash[index] != nil {
       return
     }
     // Grab Color
@@ -193,7 +193,7 @@ class FlowViewController: UIViewController, UITableViewDelegate, UITableViewData
       colorIndex = 0
     }
     colorIndexHash[index] = colorIndex
-    var color : UIColor? = colors[colorIndex]
+    let color : UIColor? = colors[colorIndex]
     cell.backgroundColor = color
     colorIndex++
   }
