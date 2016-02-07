@@ -138,7 +138,7 @@ class FlowViewController: UIViewController, UITableViewDelegate, UITableViewData
     return cell
   }
   
-  func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     if self.displayEmptyNotice {
       let alert = UIAlertController(title: "No Triggers", message: "You have no triggers, please create them in the Octoblu designer.", preferredStyle: UIAlertControllerStyle.Alert)
       alert.addAction(UIAlertAction(title: "Go To Octoblu", style: UIAlertActionStyle.Default, handler: { action in
