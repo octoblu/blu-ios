@@ -35,7 +35,7 @@ class Octoblu {
         // Request Success
         let requestSuccess = {
             (operation :AFHTTPRequestOperation!, responseObject :AnyObject!) -> Void in
-            let json = JSON(responseObject);
+            let json = JSON(responseObject ?? "{}");
             self.afterResult()
             onSuccess(json: json)
         }
