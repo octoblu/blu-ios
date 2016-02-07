@@ -121,7 +121,7 @@ class FlowViewController: UIViewController, UITableViewDelegate, UITableViewData
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
+    let cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell")! as UITableViewCell
     
     cell.textLabel!.textAlignment = NSTextAlignment.Center
     
@@ -140,7 +140,7 @@ class FlowViewController: UIViewController, UITableViewDelegate, UITableViewData
   
   func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
     if self.displayEmptyNotice {
-      var alert = UIAlertController(title: "No Triggers", message: "You have no triggers, please create them in the Octoblu designer.", preferredStyle: UIAlertControllerStyle.Alert)
+      let alert = UIAlertController(title: "No Triggers", message: "You have no triggers, please create them in the Octoblu designer.", preferredStyle: UIAlertControllerStyle.Alert)
       alert.addAction(UIAlertAction(title: "Go To Octoblu", style: UIAlertActionStyle.Default, handler: { action in
         switch action.style{
         case .Default:
@@ -162,7 +162,7 @@ class FlowViewController: UIViewController, UITableViewDelegate, UITableViewData
 //      cell.accessoryView = spinner;
 //      [spinner startAnimating];
 //      [spinner release];
-      var cell : UITableViewCell = self.tableView.cellForRowAtIndexPath(indexPath)!
+      let cell : UITableViewCell = self.tableView.cellForRowAtIndexPath(indexPath)!
       cell.textLabel!.text = "Firing...";
       
       let onSuccess = {(json : JSON) -> Void in
