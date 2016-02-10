@@ -2,7 +2,7 @@
 
 Trigger insanity
 
-![](deliver/screenshots/en-US/iOS and watchOS Simulators.png)
+  <center><img src="deliver/screenshots/en-US/iOS and watchOS Simulators.png" width="300" /></center>
 
 ## Setup
 
