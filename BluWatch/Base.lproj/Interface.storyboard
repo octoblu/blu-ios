@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="BluWatch" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="7R2-Yv-vle">
+                            <items>
+                                <imageView width="83" height="83" alignment="center" image="octoblu1" contentMode="scaleAspectFit" animationDuration="2" id="v4E-ya-lOP"/>
+                                <label width="136" alignment="left" text="Loading..." textAlignment="center" numberOfLines="2" id="N6t-o2-Z1U"/>
+                            </items>
+                        </group>
+                        <table alignment="left" spacing="0.0" id="d3V-fh-LVa">
+                            <items>
+                                <tableRow identifier="default" id="lqs-H9-NPn" customClass="RowController" customModule="BluWatch_Extension">
+                                    <group key="rootItem" width="1" alignment="left" radius="0.0" spacing="0.0" id="Ot3-YG-sap">
+                                        <items>
+                                            <label width="136" height="85.5" alignment="left" textAlignment="center" id="KAU-rd-cc9"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="groupView" destination="Ot3-YG-sap" id="82O-Zi-23S"/>
+                                        <outlet property="labelView" destination="KAU-rd-cc9" id="MP3-TL-7jF"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <menu key="menu" id="pfP-7u-BvV">
+                        <items>
+                            <menuItem title="Refresh" icon="repeat" id="GyX-6Z-RW5">
+                                <connections>
+                                    <action selector="refreshFlows" destination="AgC-eL-Hgc" id="TUF-RO-FAS"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <connections>
+                        <outlet property="loadingGroup" destination="7R2-Yv-vle" id="I71-2q-foP"/>
+                        <outlet property="loadingImage" destination="v4E-ya-lOP" id="oVK-ey-QKd"/>
+                        <outlet property="loadingLabel" destination="N6t-o2-Z1U" id="XHl-Bm-zmz"/>
+                        <outlet property="tableView" destination="d3V-fh-LVa" id="xnk-7r-fuq"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="164" y="191"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="rjY-Ar-IMT">
+            <objects>
+                <glanceController spacing="0.0" topTemplateType="groupLeftLarge" id="Sv0-Ai-Zie" customClass="GlanceController" customModule="BluWatch" customModuleProvider="target">
+                    <items>
+                        <group alignment="left" backgroundImage="octoblu1" id="gv7-I2-MZq"/>
+                        <label alignment="left" hidden="YES" id="8Dn-4m-H6u"/>
+                        <label alignment="left" text="blu" id="pmn-aX-CIc"/>
+                        <label alignment="left" id="8eH-zM-O2H"/>
+                        <group alignment="left" radius="0.0" id="eew-Gs-W6Y">
+                            <items>
+                                <label width="1" height="1" alignment="left" text="Loading..." textAlignment="center" numberOfLines="2" id="diz-O4-nH7"/>
+                            </items>
+                        </group>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                    <connections>
+                        <outlet property="triggerGroup" destination="eew-Gs-W6Y" id="Cim-Hc-wko"/>
+                        <outlet property="triggerLabel" destination="diz-O4-nH7" id="bf6-VB-zoy"/>
+                    </connections>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="164" y="514"/>
+        </scene>
+    </scenes>
+</document>

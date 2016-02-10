@@ -35,7 +35,7 @@ class Octoblu {
         // Request Success
         let requestSuccess = {
             (operation :AFHTTPRequestOperation!, responseObject :AnyObject!) -> Void in
-            let json = JSON(responseObject);
+            let json = JSON(responseObject ?? "{}");
             self.afterResult()
             onSuccess(json: json)
         }
@@ -63,7 +63,7 @@ class Octoblu {
     func getFlows(onSuccess : (triggers : [Trigger]) -> Void) -> Void {
         let processFlows = { (json : JSON) -> Void in
             var triggers : [Trigger] = []
-            for (i, trigger) in json {
+            for (_, trigger) in json {
                 let flowId = trigger["flowId"].asString
                 let flowName = trigger["flowName"].asString
                 let triggerName = trigger["name"].asString
@@ -86,5 +86,14 @@ class Octoblu {
         SVProgressHUD.showWithStatus("Loading triggers...")
         let parameters = Dictionary<String, String>()
         makeRequest("\(octobluUrl)/mytriggers", method: "GET", parameters: parameters, onSuccess : processFlows)
+    }
+
+    func trigger(uri: String, onResponse : (json : JSON)->()){
+        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            SVProgressHUD.showWithStatus("Triggering...")
+        }
+        let parameters = Dictionary<String, String>()
+        NSLog("Calling \(uri)")
+        makeRequest(uri, method: "POST", parameters: parameters, onSuccess: onResponse)
     }
 }
