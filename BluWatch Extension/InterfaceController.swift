@@ -25,11 +25,7 @@ class InterfaceController: WKInterfaceController {
         self.extDelegate = WKExtension.sharedExtension().delegate as! ExtensionDelegate
 
         // Configure interface objects here.
-        self.extDelegate.color(0) { (color) -> () in
-            NSLog("color: \(color)")
-
-            self.refreshFlows()
-        }
+        self.refreshFlows()
     }
 
     override func willActivate() {
