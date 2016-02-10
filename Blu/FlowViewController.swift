@@ -52,13 +52,17 @@ class FlowViewController: UIViewController, UITableViewDelegate, UITableViewData
     self.appDelegate.resetFlows();
     self.tableView.reloadData()
 
+    self.refreshFlows()
+  }
+
+  func refreshFlows() {
     self.appDelegate.refreshFlows { (triggers) -> Void in
-        self.displayEmptyNotice = triggers.count == 0
+        self.displayEmptyNotice = triggers == nil || triggers!.count == 0
         self.tableView.reloadData()
         self.refreshControl.endRefreshing()
     }
   }
-  
+
   override func didReceiveMemoryWarning(){
     super.didReceiveMemoryWarning()
   }

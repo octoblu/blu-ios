@@ -12,7 +12,7 @@ import WatchConnectivity
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
 
-    var window: UIWindow?
+    var window : UIWindow?
 
     var flows: [Trigger] = []
 
@@ -81,14 +81,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         switch (action as! String) {
             case "resetFlows":
                 self.resetFlows()
+                replyHandler([:])
+
             case "refreshFlows":
                 self.refreshFlows({ (triggers) -> Void in
                     NSLog("Flows: \(triggers)")
 
                     var flows = [Int: [String: AnyObject]]()
 
-                    for (index, element) in triggers.enumerate() {
-                        flows[index] = element.asDictionary()
+                    if triggers != nil {
+                        for (index, element) in triggers!.enumerate() {
+                            flows[index] = element.asDictionary()
+                        }
                     }
 
                     NSLog("- \(flows)")
@@ -97,7 +101,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
                 })
             case "triggerFlow":
                 self.triggerFlow(message["index"] as! Int, onSuccess: { (json) -> () in
-                    replyHandler(["json": json])
+                    NSLog("JSON: \(json)")
+                    
+                    replyHandler([:])
                 })
             case "color":
                 let color = self.color(message["index"] as! Int)
@@ -135,18 +141,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
 
     func resetFlows(){
         self.flows = []
-        self.refreshFlows(nil)
+        //self.refreshFlows(nil)
         self.colorIndex = 0
         self.colorIndexHash = [Int:Int]()
     }
 
-    func refreshFlows(onSuccess : ((triggers : [Trigger]) -> Void)?) {
+    func refreshFlows(onSuccess : ((triggers : [Trigger]?) -> Void)?) {
         let settings = NSUserDefaults.standardUserDefaults()
         let uuid  = settings.stringForKey("uuid")
         let token = settings.stringForKey("token")
 
         if (uuid == nil || token == nil) {
-            self.window!.rootViewController!.performSegueWithIdentifier("showLoginViewController", sender: nil)
+            if self.window != nil {
+                let controller = self.window!.rootViewController!
+                
+                dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                    controller.performSegueWithIdentifier("showLoginViewController", sender: nil)
+                }
+            }
+
+            if onSuccess != nil {
+                onSuccess!(triggers: nil)
+            }
+            
             return
         }
 
@@ -170,13 +187,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     }
 
     func triggerFlow(index : Int, onSuccess: (json : JSON)->()) {
-        self.octoblu!.trigger(self.flows[index].uri, onResponse: onSuccess);
+        self.octoblu!.trigger(self.flows[index].uri) {
+            (json) -> () in
+                let settings = NSUserDefaults(suiteName: "group.blu")!
+                settings.setInteger(index, forKey: "lastTriggeredIndex")
+
+                onSuccess(json: json)
+        }
     }
 
     func color(index : Int) -> UIColor? {
         // If color already set then don't set it to different one
         if self.colorIndexHash[index] != nil {
-            return nil
+            return self.colors[self.colorIndexHash[index]!]
         }
         // Grab Color
         if self.colorIndex < 0 || self.colorIndex >= self.colors.count {

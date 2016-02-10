@@ -89,7 +89,9 @@ class Octoblu {
     }
 
     func trigger(uri: String, onResponse : (json : JSON)->()){
-        SVProgressHUD.showWithStatus("Triggering...")
+        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            SVProgressHUD.showWithStatus("Triggering...")
+        }
         let parameters = Dictionary<String, String>()
         NSLog("Calling \(uri)")
         makeRequest(uri, method: "POST", parameters: parameters, onSuccess: onResponse)
