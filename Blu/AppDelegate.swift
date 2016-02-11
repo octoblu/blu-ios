@@ -51,9 +51,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         // Light Magenta
         UIColor(red : CGFloat(240 / 255.0), green: CGFloat(110 / 255.0), blue : CGFloat(170 / 255.0), alpha : 1.0)
     ]
-    
+
     var colorIndex : Int = 0
-    
+
     var colorIndexHash : Dictionary<Int, Int> = [Int:Int]()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -102,7 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
             case "triggerFlow":
                 self.triggerFlow(message["index"] as! Int, onSuccess: { (json) -> () in
                     NSLog("JSON: \(json)")
-                    
+
                     replyHandler([:])
                 })
             case "color":
@@ -154,7 +154,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         if (uuid == nil || token == nil) {
             if self.window != nil {
                 let controller = self.window!.rootViewController!
-                
+
                 dispatch_async(dispatch_get_main_queue()) { () -> Void in
                     controller.performSegueWithIdentifier("showLoginViewController", sender: nil)
                 }
@@ -163,7 +163,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
             if onSuccess != nil {
                 onSuccess!(triggers: nil)
             }
-            
+
             return
         }
 
@@ -189,7 +189,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     func triggerFlow(index : Int, onSuccess: (json : JSON)->()) {
         self.octoblu!.trigger(self.flows[index].uri) {
             (json) -> () in
-                let settings = NSUserDefaults(suiteName: "group.blu")!
+                let settings = NSUserDefaults(suiteName: "group.octoblu.blu")!
                 settings.setInteger(index, forKey: "lastTriggeredIndex")
 
                 onSuccess(json: json)
@@ -212,4 +212,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         return color
     }
 }
-

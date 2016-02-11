@@ -39,7 +39,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
 
     func send(action: String, index: Int?, onSuccess: (([String: AnyObject]) -> Void)?) {
         self.ensureSession()
-        
+
         if !self.session.reachable {
             NSLog("Session not reachable!")
             return
@@ -48,7 +48,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
         let message = [ "action": action, "index": index ?? -1 ];
 
         NSLog("Sending: \(message)")
-        
+
         self.session.sendMessage(message as! [String : AnyObject],
             replyHandler: {
                 (reply) -> Void in
@@ -94,7 +94,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
     func triggerFlow(index : Int, onSuccess: ()->()) {
         self.send("triggerFlow", index: index) {
             (reply) -> Void in
-                let settings = NSUserDefaults(suiteName: "group.blu")!
+                let settings = NSUserDefaults(suiteName: "group.octoblu.blu")!
                 settings.setInteger(index, forKey: "lastTriggeredIndex")
 
                 onSuccess()

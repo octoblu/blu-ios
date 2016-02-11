@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.blu</string>
+		<string>group.octoblu.blu</string>
 	</array>
 </dict>
 </plist>
