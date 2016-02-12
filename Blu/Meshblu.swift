@@ -46,8 +46,8 @@ class Meshblu {
 
         //SVProgressHUD.showWithStatus("Triggering...")
         // Set Headers
-        manager.requestSerializer.setValue(self.uuid, forHTTPHeaderField: "skynet_auth_uuid")
-        manager.requestSerializer.setValue(self.token, forHTTPHeaderField: "skynet_auth_token")
+        manager.requestSerializer.setValue(self.uuid, forHTTPHeaderField: "meshblu_auth_uuid")
+        manager.requestSerializer.setValue(self.token, forHTTPHeaderField: "meshblu_auth_token")
         
         manager.POST(url, parameters: parameters, success: requestSuccess, failure: requestFailure)
     }
