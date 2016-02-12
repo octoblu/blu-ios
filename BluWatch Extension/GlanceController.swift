@@ -32,7 +32,7 @@ class GlanceController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
 
-        let settings = NSUserDefaults(suiteName: "group.blu")!
+        let settings = NSUserDefaults(suiteName: "group.octoblu.blu")!
         self.lastTriggeredIndex = settings.objectForKey("lastTriggeredIndex") as? Int
 
         if self.lastTriggeredIndex == nil {

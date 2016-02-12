@@ -379,6 +379,7 @@
 				TargetAttributes = {
 					737E649D1C678AFB002DF027 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = JLSZ8Q5945;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -387,6 +388,7 @@
 					};
 					737E64A91C678AFB002DF027 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = JLSZ8Q5945;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -395,6 +397,7 @@
 					};
 					D02B653B1A0D465E000AF70B = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = JLSZ8Q5945;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
