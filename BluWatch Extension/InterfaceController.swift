@@ -113,11 +113,11 @@ class InterfaceController: WKInterfaceController {
         let label = row!.labelView!
         label.setText("Firing...")
 
-        self.extDelegate.triggerFlow(rowIndex) { () -> () in
+        self.extDelegate.triggerFlow(rowIndex) { (isError) -> () in
             NSLog("Triggered!")
 
             dispatch_async(dispatch_get_main_queue()) { () -> Void in
-                label.setText("Triggered!")
+                label.setText(isError ? "Failed!" : "Triggered!")
 
                 Timer.start(1, repeats: false, handler: {
                     (t: NSTimer) in

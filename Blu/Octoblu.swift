@@ -29,7 +29,7 @@ class Octoblu {
       SVProgressHUD.dismiss()
     }
   
-    func makeRequest(url : String, method : String, parameters : Dictionary<String, String>, onSuccess : (json : JSON) -> ()){
+    func makeRequest(url : String, method : String, parameters : Dictionary<String, String>, onResponse : (json : JSON) -> ()){
 
         let manager :AFHTTPRequestOperationManager = AFHTTPRequestOperationManager()
         // Request Success
@@ -37,13 +37,15 @@ class Octoblu {
             (operation :AFHTTPRequestOperation!, responseObject :AnyObject!) -> Void in
             let json = JSON(responseObject ?? "{}");
             self.afterResult()
-            onSuccess(json: json)
+            onResponse(json: json)
         }
         // Request Failure
         let requestFailure = {
             (operation :AFHTTPRequestOperation!, error :NSError!) -> Void in
             SVProgressHUD.showErrorWithStatus("Error!");
+            let json = JSON(error);
             self.afterResult()
+            onResponse(json: json)
             NSLog("requestFailure: \(error)")
         }
         // Set Headers
@@ -85,7 +87,7 @@ class Octoblu {
 
         SVProgressHUD.showWithStatus("Loading triggers...")
         let parameters = Dictionary<String, String>()
-        makeRequest("\(octobluUrl)/mytriggers", method: "GET", parameters: parameters, onSuccess : processFlows)
+        makeRequest("\(octobluUrl)/mytriggers", method: "GET", parameters: parameters, onResponse : processFlows)
     }
 
     func trigger(uri: String, onResponse : (json : JSON)->()){
@@ -94,6 +96,6 @@ class Octoblu {
         }
         let parameters = Dictionary<String, String>()
         NSLog("Calling \(uri)")
-        makeRequest(uri, method: "POST", parameters: parameters, onSuccess: onResponse)
+        makeRequest(uri, method: "POST", parameters: parameters, onResponse: onResponse)
     }
 }
