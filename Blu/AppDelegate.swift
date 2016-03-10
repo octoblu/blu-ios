@@ -103,7 +103,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
                 self.triggerFlow(message["index"] as! Int, onSuccess: { (json) -> () in
                     NSLog("JSON: \(json)")
 
-                    replyHandler([:])
+                    replyHandler(["error": json.isError])
                 })
             case "color":
                 let color = self.color(message["index"] as! Int)
@@ -187,7 +187,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     }
 
     func triggerFlow(index : Int, onSuccess: (json : JSON)->()) {
-        self.octoblu!.trigger(self.flows[index].uri) {
+        self.octoblu!.trigger("x" + self.flows[index].uri) {
             (json) -> () in
                 let settings = NSUserDefaults(suiteName: "group.octoblu.blu")!
                 settings.setInteger(index, forKey: "lastTriggeredIndex")

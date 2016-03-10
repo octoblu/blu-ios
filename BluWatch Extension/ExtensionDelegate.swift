@@ -42,6 +42,9 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
 
         if !self.session.reachable {
             NSLog("Session not reachable!")
+            if (onSuccess != nil) {
+                onSuccess!(["error": true]);
+            }
             return
         }
 
@@ -61,6 +64,10 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
             errorHandler: {
                 (error) -> Void in
                 NSLog("Error: \(error)");
+
+                if (onSuccess != nil) {
+                    onSuccess!(["error": true]);
+                }
             }
         )
     }
@@ -91,13 +98,13 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
         }
     }
 
-    func triggerFlow(index : Int, onSuccess: ()->()) {
+    func triggerFlow(index : Int, onSuccess: (isError : Bool)->()) {
         self.send("triggerFlow", index: index) {
             (reply) -> Void in
                 let settings = NSUserDefaults(suiteName: "group.octoblu.blu")!
                 settings.setInteger(index, forKey: "lastTriggeredIndex")
 
-                onSuccess()
+            onSuccess(isError: reply["error"] as! Bool);
         }
     }
 

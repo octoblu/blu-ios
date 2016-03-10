@@ -121,7 +121,7 @@ class FlowViewController: UIViewController, UITableViewDelegate, UITableViewData
       cell.textLabel!.text = "Firing...";
       
       let onSuccess = {(json : JSON) -> Void in
-        cell.textLabel!.text = "Triggered!"
+        cell.textLabel!.text = json.isError ? "Failed!" : "Triggered!"
         Timer.start(1, repeats: false, handler: {
           (t: NSTimer) in
           self.tableView.reloadData()
