@@ -81,14 +81,10 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
     func refreshFlows(onSuccess : ((triggers : [Trigger]) -> Void)?) {
         self.send("refreshFlows", index: nil) {
             (reply) -> Void in
-                let dictionaries = reply["triggers"] as! [Int: [String: AnyObject]]
-                var triggers = [Trigger](
-                    count: dictionaries.count,
-                    repeatedValue: Trigger(id: "", flowId: "", flowName: "", triggerName: "", uri: "")
-                )
-
-                for (index, trigger) in dictionaries.values.enumerate() {
-                    triggers[index] = Trigger(dict: trigger)
+                let dictionaries = reply["triggers"] as! [AnyObject]
+                var triggers = [Trigger]()
+                for (_, trigger) in dictionaries.enumerate() {
+                    triggers.append(Trigger(dict: trigger as! [String : AnyObject]))
                 }
                 self.flows = triggers
 

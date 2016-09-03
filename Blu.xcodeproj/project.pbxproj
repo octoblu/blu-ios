@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E413842A18A3F9E33E5FAB7 /* Pods_BluWatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 192044EFCEF6D092E17ADA7C /* Pods_BluWatch.framework */; };
 		737E64A21C678AFB002DF027 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737E64A01C678AFB002DF027 /* Interface.storyboard */; };
 		737E64A41C678AFB002DF027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 737E64A31C678AFB002DF027 /* Assets.xcassets */; };
 		737E64AB1C678AFB002DF027 /* BluWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 737E64AA1C678AFB002DF027 /* BluWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -19,7 +20,8 @@
 		737E64D91C6A4369002DF027 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 737E64D81C6A4369002DF027 /* WatchConnectivity.framework */; };
 		737E64DA1C6A9895002DF027 /* Trigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D447CD1A0D4C1000F0372E /* Trigger.swift */; };
 		739B43461C6B896E0038BACD /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01619071A1FB45500A19EC7 /* Timer.swift */; };
-		C21A79467D6B5EC05BF7CBAB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9820F4C6BD91C6E75410EC69 /* libPods.a */; };
+		BEFEAACFC42FD3ACA51C0B00 /* Pods_Blu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE8E48BEF83DDF5A1129D95E /* Pods_Blu.framework */; };
+		C0D6F73FC7BF5A971E66ACBA /* Pods_BluTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7E27307B969EF1F0690463 /* Pods_BluTests.framework */; };
 		D01619081A1FB45500A19EC7 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01619071A1FB45500A19EC7 /* Timer.swift */; };
 		D02B65421A0D465E000AF70B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02B65411A0D465E000AF70B /* AppDelegate.swift */; };
 		D02B65471A0D465E000AF70B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02B65451A0D465E000AF70B /* Main.storyboard */; };
@@ -31,12 +33,11 @@
 		D0D447D11A0D4C1000F0372E /* images-yay.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0D447C71A0D4C1000F0372E /* images-yay.xcassets */; };
 		D0D447D21A0D4C1000F0372E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0D447C81A0D4C1000F0372E /* Images.xcassets */; };
 		D0D447D31A0D4C1000F0372E /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0D447C91A0D4C1000F0372E /* Media.xcassets */; };
-		D0D447D41A0D4C1000F0372E /* Meshblu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D447CA1A0D4C1000F0372E /* Meshblu.swift */; };
 		D0D447D51A0D4C1000F0372E /* Octoblu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D447CB1A0D4C1000F0372E /* Octoblu.swift */; };
 		D0D447D61A0D4C1000F0372E /* RoundRectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D447CC1A0D4C1000F0372E /* RoundRectButton.swift */; };
 		D0D447D71A0D4C1000F0372E /* Trigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D447CD1A0D4C1000F0372E /* Trigger.swift */; };
 		D0D447D91A0D4D0F00F0372E /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D447D81A0D4D0F00F0372E /* json.swift */; };
-		D0D447DB1A0D4FCE00F0372E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D447DA1A0D4FCE00F0372E /* LoginViewController.swift */; };
+		E559C73F39576F24C1F22A02 /* Pods_BluWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDC40F58918931227DA22020 /* Pods_BluWatch_Extension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,8 +90,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		002F777DC69CBD95ECB67DCB /* Pods-BluWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-BluWatch Extension/Pods-BluWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		0ACA1BB7142DD9D5D5BE659A /* Pods-BluWatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluWatch.release.xcconfig"; path = "Pods/Target Support Files/Pods-BluWatch/Pods-BluWatch.release.xcconfig"; sourceTree = "<group>"; };
+		192044EFCEF6D092E17ADA7C /* Pods_BluWatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BluWatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34625195D26244B648262034 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		3A7E27307B969EF1F0690463 /* Pods_BluTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BluTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		412925FE0FB56DB9706505FD /* Pods-BluWatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluWatch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BluWatch/Pods-BluWatch.debug.xcconfig"; sourceTree = "<group>"; };
 		46F6C3A0B7C1E2397CCCA68E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		575C7F80A31D5C15062945A7 /* Pods-BluTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BluTests/Pods-BluTests.release.xcconfig"; sourceTree = "<group>"; };
+		631B1A58307B0AC98EA5CE15 /* Pods-Blu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blu.release.xcconfig"; path = "Pods/Target Support Files/Pods-Blu/Pods-Blu.release.xcconfig"; sourceTree = "<group>"; };
 		737E649E1C678AFB002DF027 /* BluWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BluWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		737E64A11C678AFB002DF027 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		737E64A31C678AFB002DF027 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -107,7 +115,11 @@
 		739B43471C6BAD1A0038BACD /* BluWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BluWatch.entitlements; sourceTree = "<group>"; };
 		739B43481C6BAD660038BACD /* blu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = blu.entitlements; sourceTree = "<group>"; };
 		739B43491C6BAF980038BACD /* BluWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "BluWatch Extension.entitlements"; sourceTree = "<group>"; };
+		846BDDA7206E256D9B161273 /* Pods-BluWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluWatch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BluWatch Extension/Pods-BluWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		9820F4C6BD91C6E75410EC69 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE8E48BEF83DDF5A1129D95E /* Pods_Blu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDC40F58918931227DA22020 /* Pods_BluWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BluWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFC2178E5A452FBF40092559 /* Pods-BluTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BluTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BluTests/Pods-BluTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D01619071A1FB45500A19EC7 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		D02B653C1A0D465E000AF70B /* blu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D02B65401A0D465E000AF70B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -120,25 +132,32 @@
 		D02B65571A0D465E000AF70B /* BluTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluTests.swift; sourceTree = "<group>"; };
 		D0D447C21A0D4C1000F0372E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		D0D447C41A0D4C1000F0372E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
-		D0D447C51A0D4C1000F0372E /* Blu-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Blu-Bridging-Header.h"; sourceTree = "<group>"; };
 		D0D447C61A0D4C1000F0372E /* FlowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowViewController.swift; sourceTree = "<group>"; };
 		D0D447C71A0D4C1000F0372E /* images-yay.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "images-yay.xcassets"; sourceTree = "<group>"; };
 		D0D447C81A0D4C1000F0372E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D0D447C91A0D4C1000F0372E /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		D0D447CA1A0D4C1000F0372E /* Meshblu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meshblu.swift; sourceTree = "<group>"; };
 		D0D447CB1A0D4C1000F0372E /* Octoblu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Octoblu.swift; sourceTree = "<group>"; };
 		D0D447CC1A0D4C1000F0372E /* RoundRectButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundRectButton.swift; sourceTree = "<group>"; };
 		D0D447CD1A0D4C1000F0372E /* Trigger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trigger.swift; sourceTree = "<group>"; };
 		D0D447D81A0D4D0F00F0372E /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = json.swift; sourceTree = "<group>"; };
-		D0D447DA1A0D4FCE00F0372E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D259E2CC35EFB9EB2F65C648 /* Pods-Blu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Blu/Pods-Blu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		167EBCE1D793D02E5F04B18B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6E413842A18A3F9E33E5FAB7 /* Pods_BluWatch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		737E64A71C678AFB002DF027 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				737E64D91C6A4369002DF027 /* WatchConnectivity.framework in Frameworks */,
+				E559C73F39576F24C1F22A02 /* Pods_BluWatch_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,7 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				737E64D71C6A435E002DF027 /* WatchConnectivity.framework in Frameworks */,
-				C21A79467D6B5EC05BF7CBAB /* libPods.a in Frameworks */,
+				BEFEAACFC42FD3ACA51C0B00 /* Pods_Blu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0D6F73FC7BF5A971E66ACBA /* Pods_BluTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +210,14 @@
 			children = (
 				34625195D26244B648262034 /* Pods.debug.xcconfig */,
 				46F6C3A0B7C1E2397CCCA68E /* Pods.release.xcconfig */,
+				D259E2CC35EFB9EB2F65C648 /* Pods-Blu.debug.xcconfig */,
+				631B1A58307B0AC98EA5CE15 /* Pods-Blu.release.xcconfig */,
+				BFC2178E5A452FBF40092559 /* Pods-BluTests.debug.xcconfig */,
+				575C7F80A31D5C15062945A7 /* Pods-BluTests.release.xcconfig */,
+				412925FE0FB56DB9706505FD /* Pods-BluWatch.debug.xcconfig */,
+				0ACA1BB7142DD9D5D5BE659A /* Pods-BluWatch.release.xcconfig */,
+				846BDDA7206E256D9B161273 /* Pods-BluWatch Extension.debug.xcconfig */,
+				002F777DC69CBD95ECB67DCB /* Pods-BluWatch Extension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -201,6 +229,10 @@
 				737E64D81C6A4369002DF027 /* WatchConnectivity.framework */,
 				737E64D61C6A435E002DF027 /* WatchConnectivity.framework */,
 				9820F4C6BD91C6E75410EC69 /* libPods.a */,
+				AE8E48BEF83DDF5A1129D95E /* Pods_Blu.framework */,
+				3A7E27307B969EF1F0690463 /* Pods_BluTests.framework */,
+				192044EFCEF6D092E17ADA7C /* Pods_BluWatch.framework */,
+				BDC40F58918931227DA22020 /* Pods_BluWatch_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -235,17 +267,14 @@
 				739B43481C6BAD660038BACD /* blu.entitlements */,
 				D0D447D81A0D4D0F00F0372E /* json.swift */,
 				D0D447C01A0D4C1000F0372E /* Base.lproj */,
-				D0D447C51A0D4C1000F0372E /* Blu-Bridging-Header.h */,
 				D0D447C61A0D4C1000F0372E /* FlowViewController.swift */,
 				D0D447C71A0D4C1000F0372E /* images-yay.xcassets */,
 				D0D447C81A0D4C1000F0372E /* Images.xcassets */,
 				D0D447C91A0D4C1000F0372E /* Media.xcassets */,
-				D0D447CA1A0D4C1000F0372E /* Meshblu.swift */,
 				D0D447CB1A0D4C1000F0372E /* Octoblu.swift */,
 				D0D447CC1A0D4C1000F0372E /* RoundRectButton.swift */,
 				D0D447CD1A0D4C1000F0372E /* Trigger.swift */,
 				D02B65411A0D465E000AF70B /* AppDelegate.swift */,
-				D0D447DA1A0D4FCE00F0372E /* LoginViewController.swift */,
 				D02B65451A0D465E000AF70B /* Main.storyboard */,
 				D02B65481A0D465E000AF70B /* Images.xcassets */,
 				D01619071A1FB45500A19EC7 /* Timer.swift */,
@@ -296,8 +325,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 737E64BF1C678AFC002DF027 /* Build configuration list for PBXNativeTarget "BluWatch" */;
 			buildPhases = (
+				B6B637D4D03D13655214AF1A /* [CP] Check Pods Manifest.lock */,
 				737E649C1C678AFB002DF027 /* Resources */,
 				737E64BE1C678AFC002DF027 /* Embed App Extensions */,
+				167EBCE1D793D02E5F04B18B /* Frameworks */,
+				8A023B1B7AD66E6D17E3F286 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -313,9 +345,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 737E64BB1C678AFC002DF027 /* Build configuration list for PBXNativeTarget "BluWatch Extension" */;
 			buildPhases = (
+				9DA56101314AC2BD6CD82EE5 /* [CP] Check Pods Manifest.lock */,
 				737E64A61C678AFB002DF027 /* Sources */,
 				737E64A71C678AFB002DF027 /* Frameworks */,
 				737E64A81C678AFB002DF027 /* Resources */,
+				8D0AB0219D460B5E79512DE1 /* [CP] Embed Pods Frameworks */,
+				10AFB506CE011D4BBBAE07D0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -330,12 +365,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D02B655B1A0D465E000AF70B /* Build configuration list for PBXNativeTarget "Blu" */;
 			buildPhases = (
-				898007E40C5E66AB5E8465D2 /* Check Pods Manifest.lock */,
+				898007E40C5E66AB5E8465D2 /* [CP] Check Pods Manifest.lock */,
 				D02B65381A0D465E000AF70B /* Sources */,
 				D02B65391A0D465E000AF70B /* Frameworks */,
 				D02B653A1A0D465E000AF70B /* Resources */,
-				C56F62B798F83F81E9F03359 /* Copy Pods Resources */,
-				742331FABE6216E2B1732A46 /* Embed Pods Frameworks */,
+				C56F62B798F83F81E9F03359 /* [CP] Copy Pods Resources */,
+				742331FABE6216E2B1732A46 /* [CP] Embed Pods Frameworks */,
 				737E64C21C678AFC002DF027 /* Embed Watch Content */,
 			);
 			buildRules = (
@@ -352,9 +387,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D02B655E1A0D465E000AF70B /* Build configuration list for PBXNativeTarget "BluTests" */;
 			buildPhases = (
+				7BF4EBAA01716F12EE737C41 /* [CP] Check Pods Manifest.lock */,
 				D02B654D1A0D465E000AF70B /* Sources */,
 				D02B654E1A0D465E000AF70B /* Frameworks */,
 				D02B654F1A0D465E000AF70B /* Resources */,
+				5E9CFF3D58A4843819FACC13 /* [CP] Embed Pods Frameworks */,
+				6893968D7F3409B8B963632E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -473,29 +511,74 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		742331FABE6216E2B1732A46 /* Embed Pods Frameworks */ = {
+		10AFB506CE011D4BBBAE07D0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BluWatch Extension/Pods-BluWatch Extension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		898007E40C5E66AB5E8465D2 /* Check Pods Manifest.lock */ = {
+		5E9CFF3D58A4843819FACC13 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BluTests/Pods-BluTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6893968D7F3409B8B963632E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BluTests/Pods-BluTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		742331FABE6216E2B1732A46 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blu/Pods-Blu-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BF4EBAA01716F12EE737C41 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,19 +586,94 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		C56F62B798F83F81E9F03359 /* Copy Pods Resources */ = {
+		898007E40C5E66AB5E8465D2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8A023B1B7AD66E6D17E3F286 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BluWatch/Pods-BluWatch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D0AB0219D460B5E79512DE1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BluWatch Extension/Pods-BluWatch Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DA56101314AC2BD6CD82EE5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B6B637D4D03D13655214AF1A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C56F62B798F83F81E9F03359 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Blu/Pods-Blu-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -537,8 +695,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0D447DB1A0D4FCE00F0372E /* LoginViewController.swift in Sources */,
-				D0D447D41A0D4C1000F0372E /* Meshblu.swift in Sources */,
 				D0D447D51A0D4C1000F0372E /* Octoblu.swift in Sources */,
 				D02B65421A0D465E000AF70B /* AppDelegate.swift in Sources */,
 				D0D447D71A0D4C1000F0372E /* Trigger.swift in Sources */,
@@ -623,6 +779,7 @@
 /* Begin XCBuildConfiguration section */
 		737E64BC1C678AFC002DF027 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 846BDDA7206E256D9B161273 /* Pods-BluWatch Extension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "BluWatch Extension/BluWatch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -648,6 +805,7 @@
 		};
 		737E64BD1C678AFC002DF027 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 002F777DC69CBD95ECB67DCB /* Pods-BluWatch Extension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "BluWatch Extension/BluWatch Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -673,6 +831,7 @@
 		};
 		737E64C01C678AFC002DF027 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 412925FE0FB56DB9706505FD /* Pods-BluWatch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BluWatch/BluWatch.entitlements;
@@ -697,6 +856,7 @@
 		};
 		737E64C11C678AFC002DF027 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ACA1BB7142DD9D5D5BE659A /* Pods-BluWatch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BluWatch/BluWatch.entitlements;
@@ -801,7 +961,7 @@
 		};
 		D02B655C1A0D465E000AF70B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34625195D26244B648262034 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = D259E2CC35EFB9EB2F65C648 /* Pods-Blu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
@@ -809,34 +969,37 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Blu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.octoblu.blu;
 				PRODUCT_NAME = blu;
-				PROVISIONING_PROFILE = "a0df2c80-ab2f-47b0-9222-94c2bbf17dac";
-				SWIFT_OBJC_BRIDGING_HEADER = "Blu/Blu-Bridging-Header.h";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
 		D02B655D1A0D465E000AF70B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46F6C3A0B7C1E2397CCCA68E /* Pods.release.xcconfig */;
+			baseConfigurationReference = 631B1A58307B0AC98EA5CE15 /* Pods-Blu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_ENTITLEMENTS = Blu/blu.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Blu/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.octoblu.blu;
 				PRODUCT_NAME = blu;
-				PROVISIONING_PROFILE = "b9cbcce5-6e59-4c9f-a8ac-ed7beb8c6b15";
-				SWIFT_OBJC_BRIDGING_HEADER = "Blu/Blu-Bridging-Header.h";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
 		D02B655F1A0D465E000AF70B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFC2178E5A452FBF40092559 /* Pods-BluTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -857,6 +1020,7 @@
 		};
 		D02B65601A0D465E000AF70B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 575C7F80A31D5C15062945A7 /* Pods-BluTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
