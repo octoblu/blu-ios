@@ -150,11 +150,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
   }
   
   func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
-    if #available(iOS 9.0, *) {
-      provider.handleURL(url, options: options)
-    } else {
-      // Fallback on earlier versions
-    }
+    provider.handleURL(url, options: options)
     
     return true
   }

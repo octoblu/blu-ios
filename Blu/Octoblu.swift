@@ -82,20 +82,23 @@ class Octoblu {
   func getFlows(onSuccess : (triggers : [Trigger]) -> Void) -> Void {
     let processFlows = { (json : JSON) -> Void in
       var triggers : [Trigger] = []
-      for (_, trigger) in json {
-        let flowId = trigger["flowId"].asString
-        let flowName = trigger["flowName"].asString
-        let triggerName = trigger["name"].asString
-        let triggerId = trigger["id"].asString
-        let uri = trigger["uri"].asString
-        
-        triggers += [Trigger(
-          id: triggerId!,
-          flowId: flowId!,
-          flowName: flowName!,
-          triggerName: triggerName!,
-          uri: uri!
-          )]
+      let error = json["error"].asString
+      if error == nil {
+        for (_, trigger) in json {
+          let flowId = trigger["flowId"].asString
+          let flowName = trigger["flowName"].asString
+          let triggerName = trigger["name"].asString
+          let triggerId = trigger["id"].asString
+          let uri = trigger["uri"].asString
+          
+          triggers += [Trigger(
+            id: triggerId!,
+            flowId: flowId!,
+            flowName: flowName!,
+            triggerName: triggerName!,
+            uri: uri!
+            )]
+        }
       }
 //      SVProgressHUD.showSuccessWithStatus("Triggers loaded!")
       

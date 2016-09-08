@@ -22,6 +22,7 @@ class FlowViewController: UIViewController, UITableViewDelegate, UITableViewData
     let settings = NSUserDefaults.standardUserDefaults()
     settings.removeObjectForKey("uuid")
     settings.removeObjectForKey("token")
+    settings.setToken(nil, forProvider: self.appDelegate.provider)
     
     self.resetFlows()
   }
